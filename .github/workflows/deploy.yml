@@ -15,7 +15,7 @@ permissions: {}
 jobs:
   build:
     name: Build
-    if: github.repository == 'ton-blockchain/verifier'
+    if: github.repository == 'gradosphera/verifier'
     runs-on: ubuntu-latest
 
     permissions:
@@ -49,7 +49,7 @@ jobs:
 
   deploy:
     name: Deploy
-    if: github.repository == 'ton-blockchain/verifier'
+    if: github.repository == 'gradosphera/verifier'
     needs: [build]
     runs-on: ubuntu-latest
 
