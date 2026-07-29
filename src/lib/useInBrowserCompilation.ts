@@ -16,9 +16,9 @@ import { useLoadVerifierRegistryInfo } from "./useLoadVerifierRegistryInfo";
 
 export enum VerificationResults {
   VALID = "VALID",
-  WASM = "WebAssembly is not supported",
-  COMPILER = "Only FunC contracts can be verified",
-  VERSION = "FunC version is not supported",
+  WASM = "WebAssembly не поддерживается",
+  COMPILER = "Только FunC контракты могут быть верифицированы",
+  VERSION = "Версия FunC не поддерживается",
 }
 
 const funcCompilers = new Map([
@@ -66,7 +66,7 @@ export function useInBrowserCompilation() {
     const funcVersion = (proof?.compilerSettings as FuncCompilerSettings)?.funcVersion;
 
     if (!funcVersion) {
-      setError(`FunC is not available for in-browser verification`);
+      setError(`FunC недоступен для верификации в браузере`);
       setLoading(false);
       return;
     }

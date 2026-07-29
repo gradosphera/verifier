@@ -80,10 +80,10 @@ function SourcesRegistry() {
           { to: data.address.toString(), value: toNano("0.01"), message: cell },
         ]);
         if (result === "rejected") {
-          adminForm.setError("admin", { message: "Failed to change admin" });
+          adminForm.setError("admin", { message: "Не удалось изменить администратора" });
         }
       } catch (err) {
-        let errMessage = "Failed to change admin";
+        let errMessage = "Не удалось изменить администратора";
 
         if ("message" in (err as Error)) {
           errMessage = (err as Error).message;
@@ -106,11 +106,11 @@ function SourcesRegistry() {
         ]);
         if (result === "rejected") {
           verifierRegistryForm.setError("verifierRegistry", {
-            message: "Failed to change verifier registry",
+            message: "Не удалось изменить реестр верификаторов",
           });
         }
       } catch (err) {
-        let errMessage = "Failed to change verifier registry";
+        let errMessage = "Не удалось изменить реестр верификаторов";
 
         if ("message" in (err as Error)) {
           errMessage = (err as Error).message;
@@ -136,10 +136,10 @@ function SourcesRegistry() {
           { to: data.address.toString(), value: toNano("0.01"), message: cell },
         ]);
         if (result === "rejected") {
-          deploymentCostsForm.setError("root", { message: "Failed to change deployment costs" });
+          deploymentCostsForm.setError("root", { message: "Не удалось изменить стоимость развёртывания" });
         }
       } catch (err) {
-        let errMessage = "Failed to change deployment costs";
+        let errMessage = "Не удалось изменить стоимость развёртывания";
 
         if ("message" in (err as Error)) {
           errMessage = (err as Error).message;
@@ -167,11 +167,11 @@ function SourcesRegistry() {
 
   return (
     <Stack spacing={4} p={4}>
-      <h1>Sources Registry</h1>
+      <h1>Реестр исходников</h1>
       {isLoading && <CircularProgress />}
       {data && (
         <>
-          <InfoPiece label="Address" data={data.address.toString()} />
+          <InfoPiece label="Адрес" data={data.address.toString()} />
 
           <form id="adminForm" onSubmit={adminForm.handleSubmit(onAdminSubmit)}>
             <Stack spacing={2}>
@@ -186,9 +186,9 @@ function SourcesRegistry() {
                 <TextField
                   {...adminForm.register("admin")}
                   control={adminForm.control}
-                  label="Admin"
+                  label="Администратор"
                 />
-                <Button text="Save" type="submit" disabled={!adminForm.formState.isDirty} />
+                <Button text="Сохранить" type="submit" disabled={!adminForm.formState.isDirty} />
               </Stack>
             </Stack>
           </form>
@@ -208,10 +208,10 @@ function SourcesRegistry() {
                 <TextField
                   {...verifierRegistryForm.register("verifierRegistry")}
                   control={verifierRegistryForm.control}
-                  label="Verifier Reg."
+                  label="Реестр верификаторов"
                 />
                 <Button
-                  text="Save"
+                  text="Сохранить"
                   type="submit"
                   disabled={!verifierRegistryForm.formState.isDirty}
                 />
@@ -235,15 +235,15 @@ function SourcesRegistry() {
                 <TextField
                   {...deploymentCostsForm.register("minTon")}
                   control={deploymentCostsForm.control}
-                  label="Min Ton"
+                  label="Мин. TON"
                 />
                 <TextField
                   {...deploymentCostsForm.register("maxTon")}
                   control={deploymentCostsForm.control}
-                  label="Max Ton"
+                  label="Макс. TON"
                 />
                 <Button
-                  text="Save"
+                  text="Сохранить"
                   type="submit"
                   disabled={!deploymentCostsForm.formState.isDirty}
                 />

@@ -51,7 +51,7 @@ export function MobileMenu({ closeMenu, showMenu }: MobileMenuProps) {
         </Box>
         <RouterLinkWrapper to={homeLink} onClick={closeMenu}>
           <img src={icon} width={30} height={30} alt="App icon" />
-          <AppLogo>TON VERIFIER</AppLogo>
+          <AppLogo>TON Верификатор</AppLogo>
         </RouterLinkWrapper>
       </Box>
     </Drawer>

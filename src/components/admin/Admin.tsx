@@ -11,7 +11,7 @@ export function Admin() {
     <div>
       {isTestnet && <TestnetBar />}
       <Stack direction="row" justifyContent="space-between" alignItems="center" p={4}>
-        <h1>Admin</h1>
+        <h1>Администратор</h1>
         <StyledTonConnectButton />
       </Stack>
       <SourcesRegistry />

@@ -23,13 +23,13 @@ export function TestnetBar() {
   return (
     <Box sx={{ background: "red", color: "white", py: 2 }}>
       <FlexBoxRow sx={{ gap: 4, px: 4 }}>
-        <Typography sx={{ fontWeight: "bold", flexGrow: 1 }}>Testnet</Typography>
+        <Typography sx={{ fontWeight: "bold", flexGrow: 1 }}>Тестовая сеть</Typography>
         <Typography
           onClick={() => {
             switchNetwork();
           }}
           sx={{ cursor: "pointer" }}>
-          Switch to mainnet
+          Переключиться на mainnet
         </Typography>
       </FlexBoxRow>
     </Box>

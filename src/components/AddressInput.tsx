@@ -63,7 +63,7 @@ export function AddressInput() {
                   onSubmit();
                 }
               }}
-              placeholder="Contract address"
+              placeholder="Адрес контракта"
               value={value}
               onChange={(e) => setValue(e.target.value)}
               onSubmit={onSubmit}
@@ -83,7 +83,7 @@ export function AddressInput() {
                   hoverBackground="rgb(0, 95, 142)"
                   fontWeight={600}
                   onClick={onSubmit}>
-                  Go
+                  Найти
                 </AppButton>
               </CenteringBox>
             </Fade>

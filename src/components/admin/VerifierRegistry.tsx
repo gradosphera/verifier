@@ -114,17 +114,17 @@ function VerifierRegsitryForm({
   async function onSubmit(values: VerifierRegistryForm) {
     // validate values
     if (!values.name) {
-      form.setError("name", { message: "Name is required" });
+      form.setError("name", { message: "Имя обязательно" });
       return;
     }
 
     if (!values.url) {
-      form.setError("url", { message: "Url is required" });
+      form.setError("url", { message: "URL обязателен" });
       return;
     }
 
     if (!values.quorum || Number(values.quorum) < 1) {
-      form.setError("quorum", { message: "Quorum is required and should be at least 1" });
+      form.setError("quorum", { message: "Кворум обязателен и должен быть не менее 1" });
       return;
     }
 
@@ -148,10 +148,10 @@ function VerifierRegsitryForm({
         },
       ]);
       if (result === "rejected") {
-        form.setError("root", { message: `Failed to update config of ${values.name}` });
+        form.setError("root", { message: `Не удалось обновить конфигурацию ${values.name}` });
       }
     } catch (err) {
-      let errMessage = `Failed to update config of ${values.name}`;
+      let errMessage = `Не удалось обновить конфигурацию ${values.name}`;
 
       if ("message" in (err as Error)) {
         errMessage = (err as Error).message;
@@ -181,10 +181,10 @@ function VerifierRegsitryForm({
           </Alert>
         )}
         <Stack flexDirection={"row"} alignItems={"center"} gap={2}>
-          <h3 style={{ margin: 0 }}>{isNew ? "Add Verifier" : form.getValues("name")}</h3>
+          <h3 style={{ margin: 0 }}>{isNew ? "Добавить верификатора" : form.getValues("name")}</h3>
           {!isNew && (
             <Button
-              text="Remove"
+text="Удалить"
               onClick={() => {
                 requestTXN([
                   {
@@ -197,16 +197,16 @@ function VerifierRegsitryForm({
             />
           )}
         </Stack>
-        <InfoPiece label="Admin" data={verifier.admin.toString()} />
-        {isNew && <TextField label="Name" name="name" control={form.control} />}
-        <TextField label="Url" name="url" control={form.control} />
-        <TextField label="Quorum" name="quorum" control={form.control} />
+        <InfoPiece label="Администратор" data={verifier.admin.toString()} />
+        {isNew && <TextField label="Имя" name="name" control={form.control} />}
+        <TextField label="URL" name="url" control={form.control} />
+        <TextField label="Кворум" name="quorum" control={form.control} />
         <Stack spacing={2} alignItems="flex-start">
           <Stack direction="row" spacing={4} alignItems="center">
-            <h4>Public Key Endpoints</h4>
+            <h4>Конечные точки публичных ключей</h4>
             <Button
               size="small"
-              text="Add"
+              text="Добавить"
               onClick={() => {
                 append({ pubKey: "", ip: "" });
               }}
@@ -216,7 +216,7 @@ function VerifierRegsitryForm({
             <Grid key={field.id} container alignItems="center" gap={2} wrap="nowrap">
               <Grid item xs={6}>
                 <TextField
-                  label={`PubKey-${index}`}
+                  label={`ПубКлюч-${index}`}
                   name={`pubKeyEndpoints.${index}.pubKey`}
                   control={form.control}
                 />
@@ -235,7 +235,7 @@ function VerifierRegsitryForm({
           ))}
         </Stack>
         <Button
-          text={isNew ? "Add verifier" : "Update config"}
+          text={isNew ? "Добавить верификатора" : "Обновить конфигурацию"}
           type="submit"
           disabled={!form.formState.isDirty}
         />
@@ -251,11 +251,11 @@ export function VerifierRegistry() {
 
   return (
     <Stack spacing={4} p={4}>
-      <h1>Verifier Registry</h1>
-      <InfoPiece label="Address" data={sourcesRegistry?.verifierRegistry ?? ""} />
+      <h1>Реестр верификаторов</h1>
+      <InfoPiece label="Адрес" data={sourcesRegistry?.verifierRegistry ?? ""} />
       {isLoading && <CircularProgress />}
       <Stack>
-        {isLoading && "Loading..."}
+        {isLoading && "Загрузка..."}
         {Object.values(data ?? {}).map((v, index) => {
           return <VerifierRegsitryForm verifier={v} altColor={index % 2 !== 1} isNew={false} />;
         })}

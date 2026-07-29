@@ -206,10 +206,10 @@ export function FileTable({ canPublish }: { canPublish: boolean }) {
             <TableRow sx={{ fontWeight: 700 }}>
               <HeaderCell
                 sx={{ paddingLeft: 0, paddingBottom: headerSpacings ? 0 : 2, width: 100 }}>
-                Order
+                Порядок
               </HeaderCell>
               <HeaderCell sx={{ paddingLeft: 0, paddingBottom: headerSpacings ? 0 : 2 }}>
-                Directory
+                Директория
               </HeaderCell>
               <HeaderCell
                 sx={{
@@ -217,11 +217,11 @@ export function FileTable({ canPublish }: { canPublish: boolean }) {
                   width: 300,
                   paddingBottom: headerSpacings ? 0 : 2,
                 }}>
-                File
+                Файл
               </HeaderCell>
               <HeaderCell
                 sx={{ paddingLeft: 0, width: 150, paddingBottom: headerSpacings ? 0 : 2 }}>
-                Include in command
+                Включить в команду
               </HeaderCell>
               <HeaderCell
                 sx={{

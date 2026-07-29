@@ -105,8 +105,8 @@ function ContractPage() {
             type={NotificationType.ERROR}
             title={
               <CenteringBox sx={{ height: 42 }}>
-                <span style={{ color: "#FC5656", marginRight: 4 }}>Error: </span>
-                Invalid address
+                <span style={{ color: "#FC5656", marginRight: 4 }}>Ошибка: </span>
+                Неверный адрес
               </CenteringBox>
             }
             notificationBody={<Box />}
@@ -120,8 +120,8 @@ function ContractPage() {
               type={NotificationType.ERROR}
               title={
                 <NotificationTitle>
-                  <span style={{ color: "#FC5656" }}>Error: </span>
-                  Unable to fetch contract data
+                  <span style={{ color: "#FC5656" }}>Ошибка: </span>
+                  Не удалось получить данные контракта
                 </NotificationTitle>
               }
               notificationBody={

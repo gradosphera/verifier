@@ -24,12 +24,12 @@ const VerificationProofPopupTableHead = () => {
   return (
     <PopupTableHead>
       <PopupTableHeadRow>
-        <PopupTableHeadCell sx={{ width: 80, paddingLeft: 3 }}>Status</PopupTableHeadCell>
-        <PopupTableHeadCell sx={{ width: 370 }}>Public Key</PopupTableHeadCell>
+        <PopupTableHeadCell sx={{ width: 80, paddingLeft: 3 }}>Статус</PopupTableHeadCell>
+        <PopupTableHeadCell sx={{ width: 370 }}>Публичный ключ</PopupTableHeadCell>
         <PopupTableHeadCell sx={{ width: 35 }}></PopupTableHeadCell>
         <PopupTableHeadCell sx={{ width: 105 }}>IP</PopupTableHeadCell>
-        <PopupTableHeadCell sx={{ width: 150 }}>Verification date</PopupTableHeadCell>
-        <PopupTableHeadCell sx={{ width: 100 }}>Verifier</PopupTableHeadCell>
+        <PopupTableHeadCell sx={{ width: 150 }}>Дата верификации</PopupTableHeadCell>
+        <PopupTableHeadCell sx={{ width: 100 }}>Верификатор</PopupTableHeadCell>
       </PopupTableHeadRow>
       <TableRow>
         <PopupTableHeadPaddingCell>
@@ -102,7 +102,7 @@ const VerificationProofPopupTableDataRow = ({
       <BorderLessCell sx={{ paddingLeft: 3, paddingBottom: 2 }}>
         <VerifiedTag px={1}>
           <img src={verified} alt="Verified icon" width={11} height={11} />
-          Verified
+          Верифицирован
         </VerifiedTag>
       </BorderLessCell>
       <PopupTableBodyCell>

@@ -41,7 +41,7 @@ function CompilerSettings({ canPublish }: { canPublish: boolean }) {
   return (
     <Box mt={4}>
       <Typography variant="h5" style={{ fontWeight: 800, fontSize: 16, marginBottom: 16 }}>
-        Compiler
+        Компилятор
       </Typography>
       <CenteringBox
         sx={{
@@ -51,7 +51,7 @@ function CompilerSettings({ canPublish }: { canPublish: boolean }) {
         }}>
         <CenteringBox mb={isSmallScreen ? 1 : 0} sx={{ width: isSmallScreen ? "100%" : "inherit" }}>
           <CompilerFormControl>
-            <CompilerLabel>Compiler</CompilerLabel>
+            <CompilerLabel>Компилятор</CompilerLabel>
             <CompilerSelect
               value={compiler}
               onChange={(e) => {
@@ -70,7 +70,7 @@ function CompilerSettings({ canPublish }: { canPublish: boolean }) {
               mb={isSmallScreen ? 1 : 0}
               sx={{ width: isSmallScreen ? "100%" : "inherit" }}>
               <CompilerFormControl disabled={canPublish}>
-                <CompilerLabel>Version</CompilerLabel>
+                <CompilerLabel>Версия</CompilerLabel>
                 <CompilerSelect
                   value={compilerSettings.funcVersion}
                   onChange={(e) => {
@@ -85,7 +85,7 @@ function CompilerSettings({ canPublish }: { canPublish: boolean }) {
               </CompilerFormControl>
             </CenteringBox>
             <Box sx={{ width: "100%", position: "relative" }}>
-              <CompilerLabel sx={{ display: "block" }}>Func command</CompilerLabel>
+              <CompilerLabel sx={{ display: "block" }}>Команда Func</CompilerLabel>
               <DirectoryInput
                 disabled={canPublish}
                 value={compilerSettings.commandLine}
@@ -124,7 +124,7 @@ function CompilerSettings({ canPublish }: { canPublish: boolean }) {
               mb={isSmallScreen ? 1 : 0}
               sx={{ width: isSmallScreen ? "100%" : "inherit" }}>
               <CompilerFormControl disabled={canPublish}>
-                <CompilerLabel>Version</CompilerLabel>
+                <CompilerLabel>Версия</CompilerLabel>
                 <CompilerSelect
                   value={(compilerSettings as TactCliCompileSettings).tactVersion}
                   disabled>
@@ -144,7 +144,7 @@ function CompilerSettings({ canPublish }: { canPublish: boolean }) {
               mb={isSmallScreen ? 1 : 0}
               sx={{ width: isSmallScreen ? "100%" : "inherit" }}>
               <CompilerFormControl disabled={canPublish}>
-                <CompilerLabel>Version</CompilerLabel>
+                <CompilerLabel>Версия</CompilerLabel>
                 <CompilerSelect
                   value={(compilerSettings as TolkCliCompileSettings).tolkVersion}
                   onChange={(e) => {

@@ -48,7 +48,7 @@ export function Footer() {
         <CenteringBox>
           <RouterLinkWrapper to={homeLink} style={{ color: "#000" }}>
             <img src={icon} alt="App icon" width={30} height={30} />
-            <AppLogo>TON VERIFIER</AppLogo>
+            <AppLogo>TON Верификатор</AppLogo>
           </RouterLinkWrapper>
         </CenteringBox>
         <SocialsContent>
@@ -67,7 +67,7 @@ export function Footer() {
         </FooterTextBoxLeft>
         <FooterTextBoxRight>
           <FooterLink target="_blank" href={TELEGRAM_SUPPORT_LINK}>
-            <Typography variant="body2">Support</Typography>
+            <Typography variant="body2">Поддержка</Typography>
           </FooterLink>
           {!isTestnet && (
             <Typography
@@ -76,7 +76,7 @@ export function Footer() {
               }}
               sx={{ ml: 2, cursor: "pointer" }}
               variant="body2">
-              Switch to Testnet
+              Переключиться на Testnet
             </Typography>
           )}
         </FooterTextBoxRight>

@@ -70,7 +70,7 @@ export function LatestVerifiedContracts() {
   return (
     <ContractsWrapper>
       <Typography variant="h6">
-        <b>Latest verified contracts</b>
+        <b>Последние верифицированные контракты</b>
       </Typography>
       <ContractsList>
         {isLoading &&
@@ -103,12 +103,12 @@ export function LatestVerifiedContracts() {
               </div>
               {verifierName || contract.verifierId || verifiedDate ? (
                 <Typography sx={{ fontSize: 13, color: "#728A96", marginTop: 4 }}>
-                  Verified {verifiedDate && <>on&nbsp;{verifiedDate}</>}{" "}
+                  Верифицирован {verifiedDate && <>{verifiedDate}</>} {" "}
                   {verifierName ? (
-                    <>by&nbsp;{verifierName}</>
+                    <>через&nbsp;{verifierName}</>
                   ) : contract.verifierId ? (
                     <>
-                      by&nbsp;
+                      через&nbsp;
                       <CopyHash value={contract.verifierId} maxSize={18} />
                     </>
                   ) : null}

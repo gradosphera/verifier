@@ -106,7 +106,7 @@ export function AddSourcesBlock({
                 background="#fff"
                 hoverBackground="#F5F5F5"
                 onClick={handlePrefill}>
-                Load verified sources
+                Загрузить верифицированные исходники
               </AppButton>
             </PrefillButtonWrapper>
           )}
@@ -157,7 +157,7 @@ export function AddSourcesBlock({
                           }}
                         />
                       )}
-                      Compile
+                      Компилировать
                     </AppButton>
                   ) : (
                     <AppButton
@@ -170,7 +170,7 @@ export function AddSourcesBlock({
                       background="#1976d2"
                       hoverBackground="#156cc2"
                       onClick={proceedToPublish}>
-                      Ready to publish
+                      Готово к публикации
                     </AppButton>
                   )}
                 </CenteringBox>

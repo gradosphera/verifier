@@ -57,7 +57,7 @@ export function TopBar() {
         <TopBarContent mb={5}>
           <RouterLinkWrapper to={homeLink}>
             <img src={icon} width={30} height={30} alt="App icon" />
-            <AppLogo>TON VERIFIER</AppLogo>
+            <AppLogo>TON Верификатор</AppLogo>
           </RouterLinkWrapper>
           <ContentColumn>
             <CenteringBox mr={2}>
@@ -71,7 +71,7 @@ export function TopBar() {
         </TopBarContent>
       )}
       {pathname.length < 2 && !isSmallScreen && (
-        <TopBarHeading>Smart Contract Verifier</TopBarHeading>
+        <TopBarHeading>Верификатор смарт-контрактов</TopBarHeading>
       )}
       <SearchWrapper>
         <AddressInput />

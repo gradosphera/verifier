@@ -47,13 +47,13 @@ function Request({ getter }: { getter: StateGetter }) {
   return (
     <Box>
       <Box sx={{ mb: 1 }}>
-        <b>Request</b>
+        <b>Запрос</b>
       </Box>
       <FlexBoxColumn sx={{ gap: 2 }}>
         {getter.parameters.map((p, i) => (
           <GetterParameterComponent key={p.name} parameter={p} />
         ))}
-        {(getter.parameters.length ?? 0) === 0 && <Box sx={{ color: "#949597" }}>(No params)</Box>}
+        {(getter.parameters.length ?? 0) === 0 && <Box sx={{ color: "#949597" }}>(Нет параметров)</Box>}
       </FlexBoxColumn>
     </Box>
   );
@@ -89,7 +89,7 @@ function ResponseValue({ type, value }: { type: string | null; value: GetterResp
           onClick={(e) => {
             e.stopPropagation();
             navigator.clipboard.writeText(currValue);
-            showNotification("Copied to clipboard!", "success");
+            showNotification("Скопировано в буфер обмена!", "success");
           }}>
           <img src={copy} alt="Copy icon" width={15} height={15} />
         </IconButton>
@@ -111,7 +111,7 @@ function Response({
     <>
       {(values.length > 0 || isLoading) && (
         <Box>
-          <b>Response</b>
+          <b>Ответ</b>
         </Box>
       )}
       {values.length > 0 && (
@@ -162,8 +162,8 @@ function ParsedGetterComponent({ getter }: { getter: StateGetter }) {
             onClick={() => {
               mutate();
             }}>
-            Run
-          </AppButton>
+Выполнить
+            </AppButton>
         </Box>
       </TitleBox>
       <ContentBox sx={{ padding: "10px 20px", gap: 2 }}>
@@ -192,7 +192,7 @@ function CustomGetterComponent({ getter }: { getter: CustomStateGetter }) {
         <Box sx={{ flexGrow: 1 }}>
           <CustomGetterInput
             value={getter.name}
-            placeholder="Get method name"
+            placeholder="Имя метода"
             onChange={(e) => getter.setName(e.target.value)}></CustomGetterInput>
         </Box>
         <Box>
@@ -207,8 +207,8 @@ function CustomGetterComponent({ getter }: { getter: CustomStateGetter }) {
             onClick={() => {
               mutate();
             }}>
-            Run
-          </AppButton>
+Выполнить
+            </AppButton>
         </Box>
       </TitleBox>
       <ContentBox sx={{ padding: "10px 20px", gap: 2 }}>
@@ -223,7 +223,7 @@ function CustomGetterComponent({ getter }: { getter: CustomStateGetter }) {
             onClick={() => {
               getter.addParameter();
             }}>
-            Add parameter
+            Добавить параметр
           </AppButton>
           <AppButton
             fontSize={12}
@@ -234,7 +234,7 @@ function CustomGetterComponent({ getter }: { getter: CustomStateGetter }) {
             onClick={() => {
               getter.removeParameter();
             }}>
-            Remove parameter
+            Удалить параметр
           </AppButton>
         </div>
         <Response returnTypes={getter.returnTypes} values={data ?? []} isLoading={isPending} />

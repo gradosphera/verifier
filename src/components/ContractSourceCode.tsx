@@ -102,7 +102,7 @@ function ContractSourceCode() {
 
   const tabs = useMemo<TabConfig[]>(() => {
     const initialTabs: TabConfig[] = [
-      { id: "disassembled", label: "Disassembled", type: "disassembled" },
+      { id: "disassembled", label: "Дизассемблированный", type: "disassembled" },
     ];
 
     const isOrbs = (name: string) => name.toLowerCase().includes("orbs");
@@ -119,7 +119,7 @@ function ContractSourceCode() {
         const labelSuffix = config.name || id;
         initialTabs.push({
           id: `sources-${id}`,
-          label: `Sources (${labelSuffix})`,
+          label: `Исходники (${labelSuffix})`,
           type: "sources",
           proof: proof,
           domIds,
@@ -127,7 +127,7 @@ function ContractSourceCode() {
         });
         initialTabs.push({
           id: `getters-${id}`,
-          label: `Getters (${labelSuffix})`,
+          label: `Геттеры (${labelSuffix})`,
           type: "getters",
           proof: proof,
           getterKey,
@@ -153,7 +153,7 @@ function ContractSourceCode() {
       const element = document.querySelector(selector) as HTMLElement | null;
       if (!element) return;
       navigator.clipboard.writeText(element.innerText);
-      showNotification("Copied to clipboard!", "success");
+      showNotification("Скопировано в буфер обмена!", "success");
     },
     [showNotification],
   );
@@ -176,7 +176,7 @@ function ContractSourceCode() {
               <img src={verified} alt="Block icon" width={41} height={41} />
             </IconBox>
             <TitleText>
-              {hasAnyProof && "Verified"} Source {isExtraSmallScreen && <br />} Code
+              {hasAnyProof && "Верифицированный "}исходный код
             </TitleText>
           </CenteringBox>
           {activeTab?.type === "sources" && (
@@ -198,7 +198,7 @@ function ContractSourceCode() {
                   validFiles.length && downloadSources(validFiles);
                 }}>
                 <img src={download} alt="Download icon" width={19} height={19} />
-                {modifiedCodeBlock ? "" : "Download sources"}
+                {modifiedCodeBlock ? "" : "Скачать исходники"}
               </AppButton>
             </Box>
           )}

@@ -30,14 +30,14 @@ const deployableTraitInitMessage = Cell.fromBoc(
 
 class IpfsNotFoundError extends Error {
   constructor(hash: string) {
-    super(`Tact package could not be found in IPFS (hash: ${hash})`);
+    super(`Пакет Tact не найден в IPFS (хеш: ${hash})`);
     this.name = "IpfsNotFoundError";
   }
 }
 
 class IpfsServerError extends Error {
   constructor(hash: string, status: number) {
-    super(`IPFS server error ${status} for hash: ${hash}`);
+    super(`Ошибка сервера IPFS ${status} для хеша: ${hash}`);
     this.name = "IpfsServerError";
   }
 }
@@ -159,23 +159,23 @@ export function ContractBlock() {
     if (!data) return [];
     return [
       {
-        title: "Name",
+        title: "Имя",
         value: data.pkg.name,
       },
       {
-        title: "Compiler",
+        title: "Компилятор",
         value: `Tact ${data.pkg.compiler.version}`,
       },
       {
-        title: "Code Hash",
+        title: "Хеш кода",
         value: data.codeCellHash,
       },
       {
-        title: "Data Hash",
+        title: "Хеш данных",
         value: data.dataCellHash,
       },
       {
-        title: "Workchain",
+        title: "Рабочая цепь",
         value: workchainForAddress(data.address.toString()),
       },
     ];
@@ -183,7 +183,7 @@ export function ContractBlock() {
 
   return (
     <DataBlock
-      title="Contract"
+      title="Контракт"
       icon={contractIcon}
       dataRows={dataRows}
       isLoading={isLoading}
@@ -205,43 +205,43 @@ function DeployBlock() {
   if (error) {
     if (error instanceof IpfsNotFoundError) {
       statusText =
-        "The requested Tact package could not be found in IPFS. Please verify the package hash.";
+        "Запрашиваемый пакет Tact не найден в IPFS. Пожалуйста, проверьте хеш пакета.";
     } else if (error instanceof IpfsServerError) {
       statusText =
-        "Failed to fetch the Tact package from IPFS due to a server error. Please try again later.";
+        "Не удалось получить пакет Tact из IPFS из-за ошибки сервера. Пожалуйста, повторите попытку позже.";
     } else {
-      statusText = `Error loading Tact package: ${error instanceof Error ? error.message : String(error)}`;
+      statusText = `Ошибка загрузки пакета Tact: ${error instanceof Error ? error.message : String(error)}`;
     }
   } else if (data?.isDeployed) {
     statusText = (
       <div>
-        Contract is already deployed.
-        {!data.hasProof && " You can publish its sources to verify it."}
+        Контракт уже развёрнут.
+        {!data.hasProof && " Вы можете опубликовать его исходники для верификации."}
       </div>
     );
   } else {
     switch (status) {
       case "initial":
-        statusText = "Contract is ready for deployment";
+        statusText = "Контракт готов к развёртыванию";
         break;
       case "pending":
-        statusText = "Please approve the transaction in your wallet";
+        statusText = "Пожалуйста, подтвердите транзакцию в вашем кошельке";
         break;
       case "issued":
-        statusText = "Transaction was issued. Monitoring deployment...";
+        statusText = "Транзакция выпущена. Отслеживание развёртывания...";
         break;
       case "rejected":
-        statusText = "Transaction was rejected. Please retry.";
+        statusText = "Транзакция отклонена. Пожалуйста, повторите попытку.";
         break;
       case "error":
-        statusText = "Transaction failed. Please retry.";
+        statusText = "Транзакция не удалась. Пожалуйста, повторите попытку.";
         break;
       case "expired":
-        statusText = "Transaction expired. Please retry.";
+        statusText = "Срок действия транзакции истёк. Пожалуйста, повторите попытку.";
         break;
       case "success":
         statusText =
-          "Contract deployed successfully! You can now publish its sources to verify it.";
+          "Контракт успешно развёрнут! Теперь вы можете опубликовать его исходники для верификации.";
         break;
     }
   }
@@ -264,7 +264,7 @@ function DeployBlock() {
           sx={{ color: "#fff", height: "20px !important", width: "20px !important" }}
         />
       )}
-      Deploy
+      Развернуть
     </AppButton>
   );
 
@@ -285,7 +285,7 @@ function DeployBlock() {
             new File([JSON.stringify(data!.pkg)], data!.pkg.name + ".pkg", { type: "text/plain" }),
           ]);
         }}>
-        Verify
+        Верифицировать
       </AppButton>
     );
   }
@@ -296,14 +296,14 @@ function DeployBlock() {
         <IconBox>
           <img src={contractIcon} alt="publish icon" width={41} height={41} />
         </IconBox>
-        <TitleText>Deploy</TitleText>
+        <TitleText>Развёртывание</TitleText>
       </CenteringBox>
 
       <Box>
         <Box sx={{ padding: "0 30px" }}>
           <FlexBoxRow gap={2} sx={{ mt: 2 }}>
             <FlexBoxColumn>
-              <div>Value to initialize contract (TON)</div>
+              <div>Сумма для инициализации контракта (TON)</div>
             </FlexBoxColumn>
             <FlexBoxColumn>
               <CustomValueInput
@@ -323,7 +323,7 @@ function DeployBlock() {
             notificationBody={
               <CenteringBox sx={{ overflow: "auto", maxHeight: 300 }}>
                 <NotificationTitle sx={{ marginBottom: 0 }}>
-                  <Box sx={{ fontWeight: 600 }}>Contract Address</Box>
+                  <Box sx={{ fontWeight: 600 }}>Адрес контракта</Box>
                   <Box sx={{ fontSize: 18, fontWeight: 700, wordBreak: "break-all" }}>
                     {data?.address.toString()}
                   </Box>
@@ -360,12 +360,12 @@ export function TactDeployer() {
   if (error) {
     if (error instanceof IpfsNotFoundError) {
       errorMessage =
-        "The requested Tact package could not be found in IPFS. Please verify the package hash.";
+        "Запрашиваемый пакет Tact не найден в IPFS. Пожалуйста, проверьте хеш пакета.";
     } else if (error instanceof IpfsServerError) {
       errorMessage =
-        "Failed to fetch the Tact package from IPFS due to a server error. Please try again later.";
+        "Не удалось получить пакет Tact из IPFS из-за ошибки сервера. Пожалуйста, повторите попытку позже.";
     } else {
-      errorMessage = `Error loading Tact package: ${error instanceof Error ? error.message : String(error)}`;
+      errorMessage = `Ошибка загрузки пакета Tact: ${error instanceof Error ? error.message : String(error)}`;
     }
   }
 
@@ -385,7 +385,7 @@ export function TactDeployer() {
             <FlexBoxColumn sx={{ marginTop: 3 }}>
               <AppNotification
                 type={NotificationType.ERROR}
-                title={<>Error</>}
+                title={<>Ошибка</>}
                 notificationBody={
                   <CenteringBox sx={{ overflow: "auto", maxHeight: 300 }}>
                     <NotificationTitle sx={{ marginBottom: 0 }}>{errorMessage}</NotificationTitle>

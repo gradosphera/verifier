@@ -15,7 +15,7 @@ export function VerificationProof() {
     <Box sx={{ width: "100%" }}>
       {hasProof && !isLoadingVerifierRegistry && (
         <PopupWrapper pt={3} pb={1}>
-          <PopupTableTitle>Verify manually</PopupTableTitle>
+          <PopupTableTitle>Верифицировать вручную</PopupTableTitle>
           <VerificationPanel />
         </PopupWrapper>
       )}

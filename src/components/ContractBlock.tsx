@@ -47,7 +47,7 @@ export function ContractBlock() {
       {
         return [
           {
-            title: "Error",
+            title: "Ошибка",
             value: String(error),
           },
         ];
@@ -55,7 +55,7 @@ export function ContractBlock() {
     }
     let rows: DataRowItem[] = [
       {
-        title: "Address",
+        title: "Адрес",
         value: displayAddress ?? "",
         showIcon: true,
         onClick: () => {
@@ -68,8 +68,8 @@ export function ContractBlock() {
 
     if (!data) {
       rows.push({
-        title: "State",
-        value: "uninitialized",
+        title: "Состояние",
+        value: "неинициализирован",
       });
       return rows;
     }
@@ -77,11 +77,11 @@ export function ContractBlock() {
     rows = [
       ...rows,
       {
-        title: "Balance",
+        title: "Баланс",
         value: `${formatBalance.format(parseFloat(data.balance))} TON`,
       },
       {
-        title: "Code Hash",
+        title: "Хеш кода",
         value: displayCodeCellHash ?? "",
         showIcon: true,
         onClick: () => {
@@ -90,7 +90,7 @@ export function ContractBlock() {
         tooltip: true,
       },
       {
-        title: "Data Hash",
+        title: "Хеш данных",
         value: displayDataCellHash ?? "",
         showIcon: true,
         onClick: () => {
@@ -104,7 +104,7 @@ export function ContractBlock() {
       rows = [
         ...rows,
         {
-          title: "Library Code Cell Hash",
+          title: "Хеш ячейки библиотечного кода",
           value: displayLibraryHash ?? "",
           showIcon: true,
           onClick: () => {
@@ -132,7 +132,7 @@ export function ContractBlock() {
 
   return (
     <DataBlock
-      title="Contract"
+      title="Контракт"
       icon={contractIcon}
       dataRows={dataRows}
       isLoading={isLoading}

@@ -49,21 +49,21 @@ interface Rule {
 const verificationRules: Rule[] = [
   {
     icon: paper,
-    description: "This source code compiles to the same exact bytecode that is found on-chain.",
+    description: "Этот исходный код компилируется в тот же байт-код, который находится в сети.",
   },
   {
     icon: bomb,
     description:
-      "You can review verification proofs and perform your own client-side verification.",
+      "Вы можете просмотреть доказательства верификации и выполнить собственную проверку на стороне клиента.",
   },
   {
     icon: alert,
     description:
-      "Variable/function names may not reflect actual usage. compiler may remove unused code.",
+      "Имена переменных/функций могут не отражать фактическое использование. Компилятор может удалить неиспользуемый код.",
   },
   {
     icon: binary,
-    description: "Comments may not be honest and should generally be ignored.",
+    description: "Комментарии могут быть нечестными, и их обычно следует игнорировать.",
   },
 ];
 
@@ -85,7 +85,7 @@ export const VerificationInfoBlock = () => {
             <IconBox>
               <img src={verification} alt="Verification icon" width={41} height={41} />
             </IconBox>
-            <TitleText>How is this contract verified?</TitleText>
+            <TitleText>Как этот контракт верифицирован?</TitleText>
           </CenteringBox>
         </CenteringBox>
       </TitleBox>

@@ -80,7 +80,7 @@ export function CompileOutput({
               </CenteringBox>
               <SuccessTitle>
                 {" "}
-                <b>Great!</b> Compile output hash matches this on-chain contract
+                <b>Отлично!</b> Хеш результата компиляции совпадает с хешем контракта в сети
               </SuccessTitle>
             </CenteringBox>
           }
@@ -96,18 +96,18 @@ export function CompileOutput({
               <CenteringBox mr={1}>
                 <img src={puzzle} alt="Reorder icon" width={39} height={26} />
               </CenteringBox>
-              <OutputTitle>Hashes are not similar</OutputTitle>
+              <OutputTitle>Хеши не совпадают</OutputTitle>
             </CenteringBox>
           }
           notificationBody={
             <Box sx={{ display: "flex", flexDirection: "column" }}>
               <ErrorRow>
-                <ErrorRowTitle>Contract hash</ErrorRowTitle>
+                <ErrorRowTitle>Хеш контракта</ErrorRowTitle>
                 <ErrorRowValue>{contractInfoData?.codeCellHash.base64 ?? "-"}</ErrorRowValue>
               </ErrorRow>
               <ErrorRowSeparator />
               <ErrorRow>
-                <ErrorRowTitle>Compile output hash</ErrorRowTitle>
+                <ErrorRowTitle>Хеш результата компиляции</ErrorRowTitle>
                 <ErrorRowValue>{compileResult?.hash ?? "-"}</ErrorRowValue>
               </ErrorRow>
             </Box>
@@ -120,8 +120,8 @@ export function CompileOutput({
           type={NotificationType.ERROR}
           title={
             <NotificationTitle>
-              <span style={{ color: "#FC5656" }}>Error: </span>
-              Compile error
+              <span style={{ color: "#FC5656" }}>Ошибка: </span>
+              Ошибка компиляции
             </NotificationTitle>
           }
           notificationBody={
@@ -139,8 +139,8 @@ export function CompileOutput({
           type={NotificationType.ERROR}
           title={
             <NotificationTitle>
-              <span style={{ color: "#FC5656" }}>Error: </span>
-              Server error
+              <span style={{ color: "#FC5656" }}>Ошибка: </span>
+              Ошибка сервера
             </NotificationTitle>
           }
           notificationBody={
@@ -161,7 +161,7 @@ export function CompileOutput({
               <CenteringBox mr={1}>
                 <img src={hint} alt="Light bulb icon" width={21} height={22} />
               </CenteringBox>
-              <OutputTitle>Possible reasons for failure</OutputTitle>
+              <OutputTitle>Возможные причины ошибки</OutputTitle>
             </CenteringBox>
           }
           notificationBody={

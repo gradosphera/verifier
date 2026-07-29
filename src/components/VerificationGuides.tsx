@@ -41,11 +41,11 @@ export function ManualVerificationGuide() {
           sx={{
             fontSize: 14,
           }}>
-          1. Install{" "}
+          1. Установите{" "}
           <PopupLink target="_blank" href="https://www.docker.com/">
             docker
           </PopupLink>{" "}
-          on your local machine
+          на ваш локальный компьютер
         </Typography>
       </ListItem>
       <ListItem sx={{ paddingTop: "7px", paddingBottom: 0 }}>
@@ -55,7 +55,7 @@ export function ManualVerificationGuide() {
             lineHeight: "34px",
             position: "relative",
           }}>
-          2. Save this file locally as <CommandLabel>sources.json</CommandLabel> :{" "}
+          2. Сохраните этот файл локально как <CommandLabel>sources.json</CommandLabel> :{" "}
           <CommandEllipsisLabel
             onClick={() =>
               !!contractProofData?.ipfsHttpLink && downloadJson(contractProofData.ipfsHttpLink)
@@ -69,7 +69,7 @@ export function ManualVerificationGuide() {
           sx={{
             fontSize: 14,
           }}>
-          3. Run in terminal:{" "}
+          3. Запустите в терминале:{" "}
           <CommandLabel> docker run -i ton-contract-verifier &#60; sources.json </CommandLabel>
         </Typography>
       </ListItem>
@@ -78,7 +78,7 @@ export function ManualVerificationGuide() {
           sx={{
             fontSize: 14,
           }}>
-          4. Review docker image source here:{" "}
+          4. Просмотрите исходный код Docker-образа здесь:{" "}
           <CommandLabel>
             <PopupLink target="_blank" href={githubLink} sx={{ color: "#212121" }}>
               {githubLink}
@@ -98,9 +98,8 @@ export function InBrowserVerificationGuide() {
   return (
     <Box p={2}>
       <Typography sx={{ fontSize: 14, marginBottom: 2 }}>
-        You are not required to rely on third-party validators. You can now verify this contract by
-        yourself by having your browser download the sources and compile them locally in-browser
-        using{" "}
+        Вам не обязательно полагаться на сторонних валидаторов. Теперь вы можете верифицировать этот
+        контракт самостоятельно, загрузив исходники в браузер и скомпилировав их локально с помощью{" "}
         <Link
           sx={{ textDecoration: "none" }}
           href={"https://github.com/ton-community/func-js"}
@@ -111,14 +110,14 @@ export function InBrowserVerificationGuide() {
         {!isOnLocalHost() && (
           <CenteringBox mt={1} sx={{ overflow: "auto", maxHeight: 300 }}>
             <NotificationTitle sx={{ margin: 0 }}>
-              The web page you're looking at is{" "}
+              Веб-страница, которую вы просматриваете, является{" "}
               <Link
                 sx={{ textDecoration: "none" }}
                 href="https://github.com/ton-community/contract-verifier"
                 target="_blank">
-                open source
+                открытым исходным кодом
               </Link>
-              , you can also fork or run it locally if you wish to have absolute control.
+              , вы также можете форкнуть или запустить её локально, если хотите иметь полный контроль.
             </NotificationTitle>
           </CenteringBox>
         )}
@@ -139,7 +138,7 @@ export function InBrowserVerificationGuide() {
               width={144}
               background="#1976d2"
               hoverBackground="#156cc2">
-              Verify locally
+              Верифицировать локально
             </AppButton>
           </Box>
         </Tooltip>
@@ -163,7 +162,7 @@ export function InBrowserVerificationGuide() {
               }}
             />
           )}
-          Verify locally
+          Верифицировать локально
         </AppButton>
       )}
       {error && (
@@ -173,8 +172,8 @@ export function InBrowserVerificationGuide() {
             type={NotificationType.ERROR}
             title={
               <NotificationTitle>
-                <span style={{ color: "#FC5656" }}>Error: </span>
-                Compile error
+                <span style={{ color: "#FC5656" }}>Ошибка: </span>
+                Ошибка компиляции
               </NotificationTitle>
             }
             notificationBody={
@@ -186,7 +185,7 @@ export function InBrowserVerificationGuide() {
             }
           />
           <Typography sx={{ marginTop: 1, fontSize: 13 }}>
-            You can ask for help in our{" "}
+            Вы можете обратиться за помощью в нашу{" "}
             <Link
               sx={{
                 textDecoration: "none",
@@ -195,7 +194,7 @@ export function InBrowserVerificationGuide() {
               }}
               href="https://t.me/tonverifier"
               target="_blank">
-              Telegram support group
+              группу поддержки Telegram
             </Link>
           </Typography>
         </>
@@ -212,7 +211,7 @@ export function InBrowserVerificationGuide() {
               </CenteringBox>
               <SuccessTitle>
                 {" "}
-                <b>Great!</b> In-browser compiler output hash matches this on-chain contract
+                <b>Отлично!</b> Хеш результата компиляции в браузере совпадает с хешем этого контракта в сети
               </SuccessTitle>
             </CenteringBox>
           }

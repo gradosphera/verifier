@@ -10,18 +10,18 @@ import verificationIcon from "../assets/verification-popup.svg";
 const VerifierCard = ({ verifierId, config }: { verifierId: string; config: VerifierWithId }) => {
   const dataRows: DataRowItem[] = [
     {
-      title: "Verifier ID",
+      title: "ID верификатора",
       value: <CopyHash value={verifierId} maxSize={36} />,
     },
     { title: "URL", value: config.url },
     {
-      title: "Admin",
+      title: "Администратор",
       value: <CopyHash value={config.admin.toString()} maxSize={64} />,
       showIcon: true,
     },
-    { title: "Quorum", value: String(config.quorum) },
+    { title: "Кворум", value: String(config.quorum) },
     {
-      title: "Endpoints",
+      title: "Конечные точки",
       value: (
         <>
           {Object.entries(config.pubKeyEndpoints).map(([pubKey, endpoint]) => (
@@ -54,7 +54,7 @@ export function VerifierListBlock() {
   return (
     <ContractsWrapper>
       <Typography variant="h6">
-        <b>Verifiers</b>
+        <b>Верификаторы</b>
       </Typography>
       {(isLoading || !isEnabled) && !hasVerifiers && (
         <Box>
@@ -76,7 +76,7 @@ export function VerifierListBlock() {
         !isLoading && (
           <CenteringBox>
             <Typography sx={{ fontSize: 14, color: "#4A4C4F" }}>
-              No verifiers available for this network.
+              Нет верификаторов для этой сети.
             </Typography>
           </CenteringBox>
         )

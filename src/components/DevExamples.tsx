@@ -5,7 +5,7 @@ import { AppButton } from "./AppButton";
 
 const examples = [
   {
-    category: "Wallets - FIFT",
+    category: "Кошельки - FIFT",
     contracts: [
       ["wallet v1r1", "EQAAQ-CfIZkUjmZ6ES9D_keK2yHz10U1ba49K0S86Whva74Z"],
       ["wallet v1r2", "EQAAVd4c_2pMb4Bp8BxumyV8jutdwJ9R-q0dBqQj7tj_W8SX"],
@@ -152,7 +152,7 @@ export function DevExamples() {
           onClick={() => {
             exportExamples();
           }}>
-          Download examples.md
+          Скачать examples.md
         </Button>
       </div>
       <br />

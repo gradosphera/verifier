@@ -85,7 +85,7 @@ function getCompilerCommand(proof?: ContractProofData) {
 
 function formatCompilerInfo(proof?: ContractProofData) {
   if (!proof || !proof.hasOnchainProof) {
-    return { label: "No proof available", link: undefined };
+    return { label: "Нет доказательств", link: undefined };
   }
   const compilerName = proof.compiler ?? "";
   const { label: compilerVersion, link } = getCompilerVersionData(proof);
@@ -145,7 +145,7 @@ export function CompilerBlock() {
             <IconBox>
               <img src={compilerIcon} alt="Verifier icon" width={41} height={41} />
             </IconBox>
-            <TitleText>Verifications</TitleText>
+            <TitleText>Верификации</TitleText>
           </CenteringBox>
         </CenteringBox>
       </TitleBox>
@@ -156,11 +156,11 @@ export function CompilerBlock() {
               <Table size="small">
                 <TableHead>
                   <TableRow>
-                    <TableCell sx={headCellSx}>Verifier ID</TableCell>
-                    <TableCell sx={headCellSx}>Verifier name</TableCell>
-                    <TableCell sx={headCellSx}>Compiler</TableCell>
-                    <TableCell sx={headCellSx}>Command</TableCell>
-                    <TableCell sx={headCellSx}>Verified on</TableCell>
+                    <TableCell sx={headCellSx}>ID верификатора</TableCell>
+                    <TableCell sx={headCellSx}>Имя верификатора</TableCell>
+                    <TableCell sx={headCellSx}>Компилятор</TableCell>
+                    <TableCell sx={headCellSx}>Команда</TableCell>
+                    <TableCell sx={headCellSx}>Верифицирован</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
@@ -220,13 +220,13 @@ export function CompilerBlock() {
             </TableContainer>
             {!hasAnyProof && (
               <Typography mt={2} sx={{ fontSize: 13, color: "#728A96" }}>
-                No verifiers have published proofs for this contract yet.
+                Верификаторы ещё не опубликовали доказательства для этого контракта.
               </Typography>
             )}
           </>
         ) : (
           <Typography sx={{ fontSize: 14, color: "#728A96" }}>
-            No verifiers available for this network.
+            Нет верификаторов для этой сети.
           </Typography>
         )}
       </Box>

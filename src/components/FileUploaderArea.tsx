@@ -61,7 +61,7 @@ export function FileUploaderArea() {
                 height={41}
               />
             </IconBox>
-            <TitleText>Add sources</TitleText>
+            <TitleText>Добавить исходники</TitleText>
           </CenteringBox>
           {hasFiles() && step !== STEPS.PUBLISH && (
             <div {...getRootProps()}>
@@ -73,7 +73,7 @@ export function FileUploaderArea() {
                 height={44}
                 width={159}>
                 <img src={upload} alt="Sources icon" width={19} height={19} />
-                Upload source
+                Загрузить исходник
               </AppButton>
             </div>
           )}
@@ -88,7 +88,7 @@ export function FileUploaderArea() {
           }}>
           {!hasFiles() && (
             <FilesDropzone {...getRootProps()}>
-              Drop sources ({acceptedFileExtensions.map((ext) => `.${ext}`).join(", ")}) here
+              Перетащите исходники ({acceptedFileExtensions.map((ext) => `.${ext}`).join(", ")}) сюда
             </FilesDropzone>
           )}
         </Box>

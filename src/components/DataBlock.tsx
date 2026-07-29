@@ -91,7 +91,7 @@ export function DataBlock({
 
   const onCopy = useCallback(async (value: string) => {
     navigator.clipboard.writeText(value);
-    showNotification("Copied to clipboard!", "success");
+    showNotification("Скопировано в буфер обмена!", "success");
   }, []);
 
   return (

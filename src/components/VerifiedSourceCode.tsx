@@ -207,7 +207,7 @@ export function VerifiedSourceCode({ button, proofData, domIds }: VerifiedSource
         {tree.length > 0 ? (
           <div className="contract-verifier-tree">{renderNodes(tree)}</div>
         ) : (
-          <div className="contract-verifier-empty">No sources available.</div>
+          <div className="contract-verifier-empty">Нет доступных исходников.</div>
         )}
       </div>
       <div style={{ position: "relative", overflow: "hidden", width: "100%" }}>
@@ -222,7 +222,7 @@ export function VerifiedSourceCode({ button, proofData, domIds }: VerifiedSource
               </pre>
             </>
           ) : (
-            <div className="contract-verifier-empty">Select a file to view its contents.</div>
+            <div className="contract-verifier-empty">Выберите файл для просмотра.</div>
           )}
         </div>
         {activeFile && (

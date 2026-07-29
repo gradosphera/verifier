@@ -14,7 +14,7 @@ function ConnectButton() {
       textColor="#fff"
       type="button"
       onClick={() => tonConnect.connectWallet()}>
-      Connect wallet
+      Подключить кошелёк
     </AppButton>
   );
 }

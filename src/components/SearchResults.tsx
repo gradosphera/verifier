@@ -35,7 +35,7 @@ export const SearchResults: React.FC<HeaderSearchResultsProps> = ({
       ))}
       <CenteringBox mt={2} mb={1} ml={1} sx={{ width: "fit-content" }}>
         <AppButton onClick={onHistoryClear} height={34} transparent>
-          Clear History
+          Очистить историю
         </AppButton>
       </CenteringBox>
     </SearchResultsWrapper>

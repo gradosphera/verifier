@@ -15,7 +15,7 @@ function CellBuilder() {
 
   return (
     <div>
-      <h4>Build the cell</h4>
+      <h4>Построить ячейку</h4>
       <TextField
         required
         id="outlined-required"
@@ -45,7 +45,7 @@ function CellBuilder() {
       <TextField
         required
         id="outlined-required"
-        label="Address"
+        label="Адрес"
         fullWidth
         onKeyUp={(e) => {
           if (e.code === "Enter") {
@@ -73,7 +73,7 @@ function CellBuilder() {
       />
       <div>{JSON.stringify(state.spec)}</div>
       <Spacer space={30} />
-      <Button variant="outlined">Send the message</Button>
+      <Button variant="outlined">Отправить сообщение</Button>
     </div>
   );
 }
@@ -88,12 +88,12 @@ function ContractInteract() {
       }}>
       <ConnectButton />
       <Spacer space={35} />
-      <TextField required id="outlined-required" label="Contract address" fullWidth />
-      <TextField required id="outlined-required" label="Value" fullWidth type={"number"} />
+      <TextField required id="outlined-required" label="Адрес контракта" fullWidth />
+      <TextField required id="outlined-required" label="Значение" fullWidth type={"number"} />
 
       <div>
-        <h3>OPs</h3>
-        <TextField required id="outlined-required" label="Value" fullWidth type={"number"} />
+        <h3>Операции</h3>
+        <TextField required id="outlined-required" label="Значение" fullWidth type={"number"} />
         <CellBuilder />
       </div>
     </div>

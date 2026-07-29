@@ -13,23 +13,23 @@ const _HintItem = styled("li")({
 function hintToElem(hint: Hints) {
   switch (hint) {
     case Hints.ENTRYPOINT_MISSING:
-      return "There usually should be at least one file containing an entrypoint (recv_internal, main)";
+      return "Обычно должен быть хотя бы один файл, содержащий точку входа (recv_internal, main)";
     case Hints.STDLIB_ORDER:
-      return "stdlib.fc should usually be the first file in the list (unless it's imported from another file)";
+      return "stdlib.fc обычно должен быть первым файлом в списке (если он не импортирован из другого файла)";
     case Hints.STDLIB_MISSING:
-      return "You can try to add stdlib.fc to your sources.";
+      return "Вы можете попробовать добавить stdlib.fc в ваши исходники.";
     case Hints.NOT_SIMILAR:
-      return "Source code compiles correctly but does not match the on-chain contract hash. Make sure you are using the correct compiler version, command line and file order.";
+      return "Исходный код компилируется правильно, но не соответствует хешу контракта в сети. Убедитесь, что вы используете правильную версию компилятора, командную строку и порядок файлов.";
     case Hints.FILE_ORDER:
-      return "Make sure all files in the command line are in the correct order";
+      return "Убедитесь, что все файлы в командной строке расположены в правильном порядке";
     case Hints.COMPILER_VERSION:
-      return "Try to use the same compiler version as the contract was compiled with";
+      return "Попробуйте использовать ту же версию компилятора, с которой был скомпилирован контракт";
     case Hints.REQUIRED_FILES:
-      return "Make sure all required files are included in the command line";
+      return "Убедитесь, что все необходимые файлы включены в командную строку";
     case Hints.SUPPORT_GROUP:
       return (
         <div>
-          If you are still facing issues, you can use the{" "}
+          Если у вас всё ещё возникают проблемы, вы можете обратиться в{" "}
           <Link
             target="_blank"
             href={TELEGRAM_SUPPORT_LINK}
@@ -37,7 +37,7 @@ function hintToElem(hint: Hints) {
               textDecoration: "none",
               cursor: "pointer",
             }}>
-            Telegram support group
+            группу поддержки Telegram
           </Link>
         </div>
       );

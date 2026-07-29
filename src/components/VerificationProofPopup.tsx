@@ -28,7 +28,7 @@ export function VerificationProofPopup({ onClose }: VerificationProofPopupProps)
           <CenteringBox mb={4} justifyContent="center">
             <img src={verificationPopup} alt="Popup icon" width={41} height={41} />
             <TitleText pl={2} sx={{ fontSize: 18, fontWeight: 800 }}>
-              Verification Proof
+              Доказательство верификации
             </TitleText>
           </CenteringBox>
           <VerificationProofTable />

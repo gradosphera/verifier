@@ -50,29 +50,29 @@ export function PublishProof({ contractAddress, missingProofs }: PublishProofPro
     case "initial":
       text = (
         <span>
-          To store your contract’s verification proof on-chain, you will need to issue a
-          transaction. This will cost 0.5 TON
+          Чтобы сохранить доказательство верификации вашего контракта в сети, вам нужно выпустить
+          транзакцию. Это будет стоить 0.5 TON
         </span>
       );
       break;
     case "rejected":
-      text = "Transaction rejected, please retry.";
+      text = "Транзакция отклонена, повторите попытку.";
       break;
     case "pending":
-      text = "Check your wallet for a pending transaction.";
+      text = "Проверьте ваш кошелёк на наличие ожидающей транзакции.";
       break;
     case "issued":
-      text = "Transaction issued, monitoring proof deployment on-chain.";
+      text = "Транзакция выпущена, отслеживаем развёртывание доказательства в сети.";
       break;
     case "success":
-      text = "Your contract is now verified! Click below to view it.";
+      text = "Ваш контракт теперь верифицирован! Нажмите ниже, чтобы просмотреть его.";
       break;
     case "expired":
-      text = "Transaction expired, please retry.";
+      text = "Срок действия транзакции истёк, повторите попытку.";
       break;
     case "error":
       text =
-        "The transaction is taking too long to complete or have failed. Please use a blockchain explorer to monitor it. You can also use our telegram support group.";
+        "Транзакция выполняется слишком долго или не удалась. Пожалуйста, используйте блокчейн-обозреватель для отслеживания. Вы также можете воспользоваться нашей группой поддержки в Telegram.";
   }
 
   useEffect(() => {
@@ -117,21 +117,21 @@ export function PublishProof({ contractAddress, missingProofs }: PublishProofPro
 
   const buildStatus = (verifierName: string) => {
     const entry = entries[verifierName];
-    if (!entry) return "Waiting for compilation";
+    if (!entry) return "Ожидание компиляции";
     if (entry.error) return entry.error.message;
     if (entry.isLoading || entry.status === "pending") {
-      return entry.compileStatus ?? "Compiling...";
+      return entry.compileStatus ?? "Компиляция...";
     }
     if (entry.data?.result?.msgCell) {
-      return entry.compileStatus ?? "Ready to publish";
+      return entry.compileStatus ?? "Готово к публикации";
     }
     if (entry.compileStatus) {
       return entry.compileStatus;
     }
     if (entry.data) {
-      return "Compilation finished";
+      return "Компиляция завершена";
     }
-    return "Waiting for compilation";
+    return "Ожидание компиляции";
   };
 
   const handlePublish = () => {
@@ -165,7 +165,7 @@ export function PublishProof({ contractAddress, missingProofs }: PublishProofPro
             height={41}
           />
         </IconBox>
-        <TitleText>Publish</TitleText>
+        <TitleText>Публикация</TitleText>
       </CenteringBox>
       {currentSection === SECTIONS.PUBLISH && missingProofs.length > 0 && (
         <Fade in={currentSection === SECTIONS.PUBLISH}>
@@ -183,7 +183,7 @@ export function PublishProof({ contractAddress, missingProofs }: PublishProofPro
             </Box>
             <Box sx={{ padding: "10px 30px 0 30px" }}>
               {missingProofs.length === 0 && (
-                <VerifierStatus>All available proofs are already published.</VerifierStatus>
+                <VerifierStatus>Все доступные доказательства уже опубликованы.</VerifierStatus>
               )}
               {missingProofs.length > 0 && (
                 <>
@@ -198,7 +198,7 @@ export function PublishProof({ contractAddress, missingProofs }: PublishProofPro
                       hoverBackground="#F5F5F5"
                       onClick={selectAllReady}
                       disabled={disableSelection}>
-                      Select all ready
+                      Выбрать все готовые
                     </AppButton>
                   </CenteringBox>
                   {/*NOTE: hide orbs*/}
@@ -238,13 +238,13 @@ export function PublishProof({ contractAddress, missingProofs }: PublishProofPro
                       sx={{ color: "#fff", height: "20px !important", width: "20px !important" }}
                     />
                   )}
-                  Publish
+                  Опубликовать
                 </AppButton>
               )}
               {status === "success" && (
                 <Button
                   sx={{ height: 44 }}
-                  text="View verified contract"
+                  text="Просмотреть верифицированный контракт"
                   onClick={() => {
                     location.reload();
                   }}
