@@ -1,3 +1,7 @@
+> [!CAUTION]
+> This verifier version is deprecated. Please use the [new verifier](https://github.com/ton-blockchain/acton/tree/master/apps/verifier)
+> instead.
+
 # contract-verifier
 
 A UI app to display verified contract proofs and to submit Ton smart contract sources for on-chain verification.
